@@ -49,7 +49,9 @@ This project implements a Python-based supplier information system as a case stu
 ---
 
 ## Core Code & Analysis
-- **Task 1:** Extracted and validated dictionary keys/values, checked for specific attributes, and cleared dictionaries for demo purposes:
+- **Task 1:** Extracted and validated dictionary keys/values, checked for specific attributes, and cleared dictionaries for demo purposes.
+
+Code:
 ```bash
 #1. Select and copy the first supplier dictionary
 sup = suppliers[0].copy()
@@ -82,7 +84,9 @@ Dictionary after clearing: {}
 Dictionary is now empty.
 ```
 
-- **Task 2:** Updated supplier records, appended new entries, and removed others using list operations:
+- **Task 2:** Updated supplier records, appended new entries, and removed others using list operations.
+
+Code:
 ```bash
 #1. Find the length of the list
 print("Number of suppliers:", len(suppliers))
@@ -125,7 +129,9 @@ Added new supplier: Scott Ltd
 Supplier with ID 53 removed. Remaining IDs: [51, 52, 54, 55]
 ```
 
-- **Task 3:** Defined and used summary statistics functions for Python lists:
+- **Task 3:** Defined and used summary statistics functions for Python lists.
+
+Code:
 ```bash
 def process_list(lst):
     total_items = len(lst)
@@ -152,7 +158,9 @@ Added new supplier: Scott Ltd
 Supplier with ID 53 removed. Remaining IDs: [51, 52, 54, 55]
 ```
 
-- **Task 4:** Generated lists and joined strings for reporting supplier names:
+- **Task 4:** Generated lists and joined strings for reporting supplier names.
+
+Code:
 ```bash
 #1. List of supplier_name
 supplier_names = [sup['supplier_name'] for sup in suppliers]
@@ -171,7 +179,9 @@ Average: 23.2
 Minimum value: 1
 ```
 
-- **Task 5:** Created product information as sample dictionaries:
+- **Task 5:** Created product information as sample dictionaries.
+
+Code:
 ```bash
 prod_155 = {
     "discontinued": 0,
@@ -193,7 +203,9 @@ Supplier names: ['Reyes-Goodman', 'Cisneros-White', 'Brown PLC', 'Scott Ltd']
 Joined names: Reyes-Goodman; Cisneros-White; Brown PLC; Scott Ltd
 ```
 
-- **Task 6:** Filtered suppliers by state (VIC/NSW) using Python’s `filter`:
+- **Task 6:** Filtered suppliers by state (VIC/NSW) using Python’s `filter`.
+
+Code:
 ```bash
 vic_nsw_suppliers = list(filter(lambda x: x['state'] in ('VIC', 'NSW'), suppliers))
 print("Number of VIC/NSW suppliers:", len(vic_nsw_suppliers))
@@ -205,7 +217,9 @@ Output:
 {'discontinued': 0, 'lead_time_days': 3, 'product_category': 'Wireless Phone', 'product_description': 'Display: 5.1-inches Camera: ...', 'product_id': 155, 'product_name': 'Samsung Galaxy S5, Black 16GB (Sprint)', 'reorder_level': 18, 'unit_price': 699.99}
 ```
 
-- **Task 7:** Applied functional programming with `map` and `lambda` for concise display of supplier information:
+- **Task 7:** Applied functional programming with `map` and `lambda` for concise display of supplier information.
+
+Code:
 ```bash
 supplier_names = list(map(lambda x: f"{x['city']}: {x['supplier_id']}, {x['supplier_name']}", suppliers))
 print("supplier names list:", supplier_names)
@@ -216,7 +230,9 @@ Output:
 supplier names list: ['Greenway: 51, Reyes-Goodman', 'Dundee: 52, Cisneros-White', 'Claremont: 54, Brown PLC', 'Lancaster: 55, Scott Ltd']
 ```
 
-- **Task 8:** Handled Australian-style dates using the `datetime` module:
+- **Task 8:** Handled Australian-style dates using the `datetime` module.
+
+Code:
 ```bash
 import datetime
 
@@ -241,7 +257,9 @@ Output:
 28/02/2022
 ```
 
-- **Task 9:** Used regular expressions to extract area codes from supplier phone numbers:
+- **Task 9:** Used regular expressions to extract area codes from supplier phone numbers.
+
+Code:
 ```bash
 import re
 
@@ -257,7 +275,9 @@ Output:
 Area code: 07
 ```
 
-- **Task 10:** Defined and demonstrated a `Supplier` class with custom setter/getter methods for contact management:
+- **Task 10:** Defined and demonstrated a `Supplier` class with custom setter/getter methods for contact management.
+
+Code:
 ```bash
 class Supplier:
     def __init__(self, d):
