@@ -295,9 +295,10 @@ Supplier phone (should be new): (03) 9961 5555
 
 1. Clone or download this repository to your local computer.
 2. Ensure you have Python 3.x installed ([Download Python](https://www.python.org/downloads/)).
-3. Place both `Supplier information system project.ipynb` and `suppliers.json` in the same folder.
-4. Open the notebook with [Jupyter Notebook](https://jupyter.org/) or VS Code (with the Jupyter extension).
-5. Run all code cells in sequence to reproduce the analysis and data processing.
+3. Open the notebook with [Jupyter Notebook](https://jupyter.org/) or VS Code (with the Jupyter extension).
+4. Download `suppliers.json`, then open it.
+5. Place the code from the [Core Code & Analysis](#core-code--analysis) into `suppliers.json`.
+6. Run all code cells in sequence to reproduce the analysis and data processing.
 
 **Dependencies:**
 - All standard libraries: `re`, `datetime`
