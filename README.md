@@ -84,7 +84,7 @@ This project implements a Python-based supplier information system as a case stu
 To install Jupyter, run:
 ```bash
 pip install notebook
-```bash
+
 jupyter notebook
 ```
 
