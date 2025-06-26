@@ -49,16 +49,162 @@ This project implements a Python-based supplier information system as a case stu
 ---
 
 ## Core Code & Analysis
-- **A1:** Extracted and validated dictionary keys/values, checked for specific attributes, and cleared dictionaries for demo purposes.
-- **A2:** Updated supplier records, appended new entries, and removed others using list operations.
-- **A3:** Defined and used summary statistics functions for Python lists.
-- **A4:** Generated lists and joined strings for reporting supplier names.
-- **A5:** Created product information as sample dictionaries.
-- **A6:** Filtered suppliers by state (VIC/NSW) using Python’s `filter`.
-- **A7:** Applied functional programming with `map` and `lambda` for concise display of supplier information.
-- **A8:** Handled Australian-style dates using the `datetime` module.
-- **A9:** Used regular expressions to extract area codes from supplier phone numbers.
-- **A10:** Defined and demonstrated a `Supplier` class with custom setter/getter methods for contact management.
+- **#Task 1:** Extracted and validated dictionary keys/values, checked for specific attributes, and cleared dictionaries for demo purposes:
+```bash
+#1. Select and copy the first supplier dictionary
+sup = suppliers[0].copy()
+
+#2. Print keys programmatically
+print("keys:", list(sup.keys()))
+
+#3. Print values programmatically
+print("values:", list(sup.values()))
+
+#4. Check if the key 'mobile' exists
+If 'mobile' in sup:
+    print("The dictionary contains the key 'mobile'.")
+else:
+    print("The dictionary does NOT contain the key 'mobile'.")
+
+#5. Delete all items and check if it's empty
+sup.clear()
+print("Dictionary after clearing:", sup)
+if len(sup) == 0:
+    print("Dictionary is now empty.")
+```
+- **#Task 2:** Updated supplier records, appended new entries, and removed others using list operations:
+```bash
+#1. Find the length of the list
+print("Number of suppliers:", len(suppliers))
+
+#2. Change the contact_firstname of the supplier with supplier_id=52
+for sup in suppliers:
+    if sup['supplier_id'] == 52:
+        sup['contact_firstname'] = "Ken"
+        print("Updated:", sup['contact_firstname'])
+
+#3. Add a new supplier
+new_supplier = {
+    "city": "Lancaster",
+    "contact_firstname": "Tracy",
+    "contact_lastname": "Wilson",
+    "contact_title": "Mrs",
+    "country": "Australia",
+    "email": "tracy4587.wilson@gmail.com",
+    "notes": "",
+    "phone": "(03) 9323 0663",
+    "postcode": "3620",
+    "state": "VIC",
+    "street_address": "Suite 141/8 Black Dale",
+    "supplier_id": 55,
+    "supplier_name": "Scott Ltd"
+}
+suppliers.append(new_supplier)
+print("Added new supplier:", suppliers[-1]['supplier_name'])
+
+#4. Remove supplier with supplier_id=53
+suppliers = [sup for sup in suppliers if sup['supplier_id'] != 53]
+print("Supplier with ID 53 removed. Remaining IDs:", [sup['supplier_id'] for sup in suppliers])
+```
+- **A3:** Defined and used summary statistics functions for Python lists:
+```bash
+def process_list(lst):
+    total_items = len(lst)
+    total_sum = sum(lst)
+    average = total_sum / total_items
+    min_value = min(lst)
+    return total_items, total_sum, average, min_value
+
+# Test list
+my_list = [1, 55, 10, 20, 30]
+
+result = process_list(my_list)
+print("Total items:", result[0])
+print("Total sum:", result[1])
+print("Average:", result[2])
+print("Minimum value:", result[3])
+```
+- **A4:** Generated lists and joined strings for reporting supplier names:
+```bash
+#1. List of supplier_name
+supplier_names = [sup['supplier_name'] for sup in suppliers]
+print("Supplier names:", supplier_names)
+
+#2. Joined string
+joined_names = '; '.join(supplier_names)
+print("Joined names:", joined_names)
+```
+- **A5:** Created product information as sample dictionaries:
+```bash
+prod_155 = {
+    "discontinued": 0,
+    "lead_time_days": 3,
+    "product_category": "Wireless Phone",
+    "product_description": "Display: 5.1-inches Camera: ...",
+    "product_id": 155,
+    "product_name": "Samsung Galaxy S5, Black 16GB (Sprint)",
+    "reorder_level": 18,
+    "unit_price": 699.99
+}
+print(prod_155)
+print()
+```
+- **A6:** Filtered suppliers by state (VIC/NSW) using Python’s `filter`:
+```bash
+vic_nsw_suppliers = list(filter(lambda x: x['state'] in ('VIC', 'NSW'), suppliers))
+print("Number of VIC/NSW suppliers:", len(vic_nsw_suppliers))
+print("VIC/NSW suppliers:", vic_nsw_suppliers)
+```
+- **A7:** Applied functional programming with `map` and `lambda` for concise display of supplier information:
+```bash
+supplier_names = list(map(lambda x: f"{x['city']}: {x['supplier_id']}, {x['supplier_name']}", suppliers))
+print("supplier names list:", supplier_names)
+```
+- **A8:** Handled Australian-style dates using the `datetime` module:
+```bash
+import datetime
+
+#1. Convert Australia date string to a date object
+d = datetime.date(2022, 3, 2)
+print(d)
+print()
+
+#2. Print date object for 28/02/2022 in AU format
+from dateutil.parser import parse
+
+date_obj = parse("28/02/2022")
+oz_date_format = date_obj.strftime('%d/%m/%Y')
+print(oz_date_format)
+print()
+```
+- **A9:** Used regular expressions to extract area codes from supplier phone numbers:
+```bash
+import re
+
+phone_number = "(07) 3806 8534"
+if re.search(r'(^\(\d{2}\) \d{4} \d{4})', phone_number):  
+    print("Area code:", "07")
+else:
+    print("Invalid phone number")
+```
+- **A10:** Defined and demonstrated a `Supplier` class with custom setter/getter methods for contact management:
+```bash
+class Supplier:
+    def __init__(self, d):
+        for k in d:
+            setattr(self, k, d[k])
+
+    def set_phone(self, phone):
+        self.phone = phone
+
+    def get_phone(self):
+        return self.phone
+
+# Test the class
+supp = Supplier(suppliers[2])
+supp.set_phone("(03) 9961 5555")
+print("Supplier phone (should be new):", supp.get_phone())
+```
 
 ---
 
@@ -79,12 +225,14 @@ This project implements a Python-based supplier information system as a case stu
 5. Run all code cells in sequence to reproduce the analysis and data processing.
 
 **Dependencies:**
-- All standard libraries: `json`, `re`, `datetime`
+- All standard libraries: `re`, `datetime`
 - Jupyter Notebook for interactive code execution  
 To install Jupyter, run:
 ```bash
 pip install notebook
-
+```
+And then:
+```bash
 jupyter notebook
 ```
 
