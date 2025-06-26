@@ -348,7 +348,7 @@ jupyter notebook
 ---
 
 ## Acknowledgments
-- Case Study & Data: Provided by RMIT University, Information Systems Solutions and Design.
+- Case Study & Data: RMIT University.
 - Libraries Used: re, datetime (Python Standard Library).
 
 ---
