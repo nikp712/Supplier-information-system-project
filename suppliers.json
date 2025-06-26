@@ -1,0 +1,62 @@
+[
+    {
+        "city": "Greenway",
+        "contact_firstname": "Thomas",
+        "contact_lastname": "Brown",
+        "contact_title": "Mr",
+        "country": "Australia",
+        "email": "thomas6246.brown@gmail.com",
+        "notes": "",
+        "phone": "(02) 8770 4857",
+        "postcode": "2900",
+        "state": "ACT",
+        "street_address": "Level 9/2 Michelle Follow",
+        "supplier_id": 51,
+        "supplier_name": "Reyes-Goodman"
+    },
+    {
+        "city": "Dundee",
+        "contact_firstname": "Kenneth",
+        "contact_lastname": "Thompson",
+        "contact_title": "Mr",
+        "country": "Australia",
+        "email": "kenneth6514.thompson@gmail.com",
+        "notes": "",
+        "phone": "(02) 4023 4795",
+        "postcode": "2370",
+        "state": "NSW",
+        "street_address": "99 Lopez Heights",
+        "supplier_id": 52,
+        "supplier_name": "Cisneros-White"
+    },
+    {
+        "city": "Benambra",
+        "contact_firstname": "Brandi",
+        "contact_lastname": "Holland",
+        "contact_title": "Mrs",
+        "country": "Australia",
+        "email": "brandi1472.holland@gmail.com",
+        "notes": "",
+        "phone": "(03) 9961 5347",
+        "postcode": "3900",
+        "state": "VIC",
+        "street_address": "Flat 37/183 Angela Reserve",
+        "supplier_id": 53,
+        "supplier_name": "Morales, Martin and Crane"
+    },
+    {
+        "city": "Claremont",
+        "contact_firstname": "Ryan",
+        "contact_lastname": "Guerrero",
+        "contact_title": "Mr",
+        "country": "Australia",
+        "email": "ryan416.guerrero@gmail.com",
+        "notes": "",
+        "phone": "(08) 9267 7911",
+        "postcode": "6910",
+        "state": "WA",
+        "street_address": "9 Nicholson Circlet",
+        "supplier_id": 54,
+        "supplier_name": "Brown PLC"
+    }
+]
