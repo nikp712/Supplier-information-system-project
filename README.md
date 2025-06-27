@@ -1,4 +1,4 @@
-# Supplier-information-system-project
+# Supplier Information System Project
 Python and Jupyter Notebook solutions for the supplier information system case study and analysis
 
 ## Table of Contents
